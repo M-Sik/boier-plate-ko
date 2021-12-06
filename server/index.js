@@ -31,7 +31,7 @@ app.get('/api/hello', (req, res) => {
 
 
 
-app.post('/api/users//register', (req, res) => {
+app.post('/api/users/register', (req, res) => {
     //회원 가입 할 때 필요한 정보들을 client에서 가져오면
     //그것들을 데이터 베이스에 넣어준다.
 
@@ -71,6 +71,10 @@ app.post('/api/users/login', (req, res) => {
                 //토큰을 저장한다. 어디에? 쿠키, 로컬스토리지
                 res.cookie("x_auth", user.token)
                     .status(200)
+                    // 프론트에 던져줌. 프론트 LoginPage에서
+                    // .then(response => { if (response.payload.loginSuccess) {수행할 내용} }
+                    // 으로 받아서 true인지 false인지 확인함.
+                    // loginSuccess를 통해
                     .json({ loginSuccess: true, userId: user._id })
 
             })
