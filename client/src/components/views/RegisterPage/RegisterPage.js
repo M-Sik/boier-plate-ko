@@ -92,7 +92,7 @@ function RegisterPage() {
                 
                 <br />
                 <button type='submit'>
-                    Login
+                    회원가입
                 </button>
             </form>
             
